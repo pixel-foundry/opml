@@ -2,12 +2,12 @@
 import PackageDescription
 
 let package = Package(
-	name: "SwiftPackage",
+	name: "OPML",
 	products: [
-		.library(name: "SwiftPackage", targets: ["SwiftPackage"])
+		.library(name: "OPML", targets: ["OPML"])
 	],
 	targets: [
-		.target(name: "SwiftPackage"),
-		.testTarget(name: "Tests", dependencies: ["SwiftPackage"])
+		.target(name: "OPML"),
+		.testTarget(name: "Tests", dependencies: ["OPML"])
 	]
 )

@@ -1,5 +1,5 @@
 import XCTest
-@testable import SwiftPackage
+@testable import OPML
 
 class Tests: XCTestCase {
 
