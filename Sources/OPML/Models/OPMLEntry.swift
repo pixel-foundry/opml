@@ -2,6 +2,7 @@ import Foundation
 
 public struct OPMLEntry: Codable, Hashable {
 
+	/// What is displayed when an outliner opens the OPML file.
 	public let text: String
 	public let attributes: [Attribute]?
 	public let children: [OPMLEntry]?
