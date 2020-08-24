@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+<head>
+<title>Feedly</title>
+</head>
+<body>
+<outline type="rss" xmlUrl="https://feed.ashfurrow.com/feed.xml" title="Ash Furrow's Blog" text="Ash Furrow's Blog" htmlUrl="https://ashfurrow.com" />
+<outline xmlUrl="http://feeds2.feedburner.com/SandofskyBlogEntries" htmlUrl="https://sandofsky.com" title="Benjamin Sandofsky" text="Benjamin Sandofsky" type="rss" />
+<outline text="Brandon Williams" htmlUrl="http://www.fewbutripe.com/" xmlUrl="https://www.fewbutripe.com/feed.xml" type="rss" title="Brandon Williams" />
+<outline type="rss" xmlUrl="http://irace.me/feed.xml" text="Bryan Irace" title="Bryan Irace" htmlUrl="http://irace.me/" />
+<outline title="Chris Eidhof" text="Chris Eidhof" xmlUrl="http://chris.eidhof.nl//index.xml" htmlUrl="http://chris.eidhof.nl/" type="rss" />
+<outline htmlUrl="https://chris.zarate.org" type="rss" text="Chris Zarate" title="Chris Zarate" xmlUrl="https://chris.zarate.org/feed" />
+<outline title="Coding Horror" text="Coding Horror" htmlUrl="https://blog.codinghorror.com/" type="rss" xmlUrl="http://feeds.feedburner.com/codinghorror" />
+<outline type="rss" title="Craig Mod" htmlUrl="https://craigmod.com/" xmlUrl="https://craigmod.com/index.xml" text="Craig Mod" />
+<outline xmlUrl="https://daringfireball.net/feeds/articles" text="Daring Fireball (Articles)" title="Daring Fireball (Articles)" type="rss" htmlUrl="http://daringfireball.net/" />
+<outline xmlUrl="http://blog.hal.codes/rss.xml" text="Hal Lee" title="Hal Lee" type="rss" htmlUrl="https://blog.hal.codes" />
+<outline title="Halide - Medium" type="rss" text="Halide - Medium" htmlUrl="https://blog.halide.cam?source=rss----ef958c3c10ff---4" xmlUrl="https://blog.halide.cam/feed" />
+<outline title="Hypercritical" text="Hypercritical" type="rss" htmlUrl="http://hypercritical.co/" xmlUrl="http://hypercritical.co/feeds/main" />
+<outline text="ichelle im" htmlUrl="http://www.ichelleim.com/" title="ichelle im" type="rss" xmlUrl="http://www.ichelleim.com/feed?format=rss" />
+<outline htmlUrl="https://inessential.com/" xmlUrl="http://inessential.com/feed.json" title="inessential" text="inessential" type="rss" />
+<outline title="Jesse Squires" htmlUrl="https://www.jessesquires.com/" text="Jesse Squires" type="rss" xmlUrl="https://www.jessesquires.com/feed.xml" />
+<outline title="Lens" htmlUrl="https://www.nytimes.com/section/lens" type="rss" xmlUrl="https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/lens/rss.xml" text="Lens" />
+<outline xmlUrl="http://lord.io/feed.xml" title="Lord i/o" text="Lord i/o" type="rss" htmlUrl="https://lord.io/blog" />
+<outline type="rss" xmlUrl="https://www.macstories.net/feed/" htmlUrl="https://www.macstories.net" text="MacStories" title="MacStories" />
+<outline text="Matthew Bischoff" htmlUrl="https://matthewbischoff.com/" title="Matthew Bischoff" xmlUrl="https://matthewbischoff.com/feed/" type="rss" />
+<outline text="MATHEW BORRETT" htmlUrl="http://www.mathewborrett.com/" type="rss" xmlUrl="http://www.mathewborrett.com/blog?format=rss" title="MATHEW BORRETT" />
+<outline xmlUrl="http://www.minimallyminimal.com/blog?format=RSS" title="Minimally Minimal" text="Minimally Minimal" type="rss" htmlUrl="http://www.minimallyminimal.com/" />
+<outline text="National Geographic Photo of the Day" xmlUrl="http://feeds.nationalgeographic.com/ng/photography/photo-of-the-day/" type="rss" htmlUrl="http://photography.nationalgeographic.com/photography/photo-of-the-day/" title="National Geographic Photo of the Day" />
+<outline type="rss" xmlUrl="https://nshipster.com/feed.xml" title="NSHipster" htmlUrl="https://nshipster.com/" text="NSHipster" />
+<outline title="objc.io" text="objc.io" xmlUrl="http://www.objc.io/feed.xml" htmlUrl="http://www.objc.io" type="rss" />
+<outline type="rss" htmlUrl="https://oleb.net/blog/" text="Ole Begemann" xmlUrl="https://oleb.net/blog/atom.xml" title="Ole Begemann" />
+<outline title="Overthought" htmlUrl="https://overthought.ghost.io/" type="rss" xmlUrl="https://brianlovin.com/overthought/rss" text="Overthought" />
+<outline type="rss" htmlUrl="https://www.pointfree.co/blog" xmlUrl="https://www.pointfree.co/blog/feed/atom.xml" title="Point-Free Pointers" text="Point-Free Pointers" />
+<outline xmlUrl="https://rama.works/prototype?format=rss" htmlUrl="https://rama.works/prototype/" title="Proto(Type) - A RAMA WORKS® Blog - RAMA WORKS®" type="rss" text="Proto(Type) - A RAMA WORKS® Blog - RAMA WORKS®" />
+<outline title="Sam Soffes" text="Sam Soffes" htmlUrl="https://soffes.blog" xmlUrl="https://soffes.blog/rss.xml" type="rss" />
+<outline type="rss" text="Signal Problems" xmlUrl="https://signalproblems.substack.com/feed/" title="Signal Problems" htmlUrl="https://signalproblems.substack.com" />
+<outline htmlUrl="https://m.signalvnoise.com" title="Signal v. Noise" type="rss" text="Signal v. Noise" xmlUrl="https://m.signalvnoise.com/feed/" />
+<outline xmlUrl="https://www.stephencelis.com/atom.xml" type="rss" htmlUrl="http://www.stephencelis.com" text="Stephen Celis" title="Stephen Celis" />
+<outline type="rss" xmlUrl="http://stratechery.com/feed/" text="Stratechery by Ben Thompson" title="Stratechery by Ben Thompson" htmlUrl="https://stratechery.com" />
+<outline type="rss" xmlUrl="https://mecid.github.io/feed.xml" title="Swift with Majid" text="Swift with Majid" htmlUrl="https://swiftwithmajid.com/" />
+<outline type="rss" xmlUrl="https://swift.org/atom.xml" title="Swift.org" text="Swift.org" htmlUrl="https://swift.org" />
+<outline type="rss" text="tonsky.me" xmlUrl="http://tonsky.me/blog/atom.xml" htmlUrl="https://tonsky.me/" title="tonsky.me" />
+<outline title="Tyler Stalman" htmlUrl="https://stalman.com/blog/" xmlUrl="http://stalman.com/blog?format=RSS" text="Tyler Stalman" type="rss" />
+<outline xmlUrl="https://useyourloaf.com/blog/rss.xml" title="Use Your Loaf - iOS Development News &amp; Tips" type="rss" text="Use Your Loaf - iOS Development News &amp; Tips" htmlUrl="https://useyourloaf.com/blog/" />
+<outline htmlUrl="https://xkcd.com/" text="xkcd.com" type="rss" title="xkcd.com" xmlUrl="https://xkcd.com/atom.xml" />
+</body>
+</opml>
