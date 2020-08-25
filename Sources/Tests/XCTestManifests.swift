@@ -6,7 +6,9 @@ extension Tests {
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__Tests = [
-        ("testOPMLParsing", testOPMLParsing),
+        ("testMissingFile", testMissingFile),
+        ("testOPML2", testOPML2),
+        ("testOPMLNested", testOPMLNested),
     ]
 }
 

@@ -8,6 +8,10 @@ let package = Package(
 	],
 	targets: [
 		.target(name: "OPML"),
-		.testTarget(name: "Tests", dependencies: ["OPML"], resources: [.copy("Resources/feedly.opml")])
+		.testTarget(
+			name: "Tests",
+			dependencies: ["OPML"],
+			resources: [.copy("Resources/feedly.opml"), .copy("Resources/rsparser.opml")]
+		)
 	]
 )

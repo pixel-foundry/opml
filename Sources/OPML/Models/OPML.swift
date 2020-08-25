@@ -30,6 +30,14 @@ public struct OPML: Codable, Hashable {
 
 	public let entries: [OPMLEntry]
 
+	public init(_ data: Data) throws {
+		self = try OPMLParser(data).parse()
+	}
+
+	public init(file url: URL) throws {
+		self = try OPMLParser(file: url).parse()
+	}
+
 	public init(
 		version: String = "2.0",
 		title: String? = nil,

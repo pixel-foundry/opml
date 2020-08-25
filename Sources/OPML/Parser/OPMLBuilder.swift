@@ -20,9 +20,8 @@ final class OPMLBuilder {
 		entries?.append(entry)
 	}
 
-	var opml: OPML? {
-		guard let version = version else { return nil }
-		guard let entries = entries else { return nil }
+	func opml() throws -> OPML {
+		guard let version = version else { throw Error.missingVersion }
 		return OPML(
 			version: version,
 			title: title,
@@ -32,8 +31,16 @@ final class OPMLBuilder {
 			ownerEmail: ownerEmail,
 			ownerID: ownerID,
 			docs: docs,
-			entries: entries
+			entries: entries ?? []
 		)
+	}
+
+	public enum Error: String, LocalizedError {
+		public var errorDescription: String? {
+			rawValue
+		}
+
+		case missingVersion = "Missing OPML version attribute"
 	}
 
 }

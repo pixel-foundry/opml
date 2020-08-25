@@ -13,10 +13,17 @@ final class OPMLParser: NSObject {
 
 	fileprivate let opmlBuilder = OPMLBuilder()
 
-	func parse() -> OPML? {
+	func parse() throws -> OPML {
 		xmlParser.delegate = self
-		_ = xmlParser.parse()
-		return opmlBuilder.opml
+		let success = xmlParser.parse()
+		if !success {
+			if let error = xmlParser.parserError {
+				throw Error.parseError(error)
+			} else {
+				throw Error.invalidDocument
+			}
+		}
+		return try opmlBuilder.opml()
 	}
 
 	init(_ data: Data) {
@@ -24,8 +31,8 @@ final class OPMLParser: NSObject {
 		super.init()
 	}
 
-	init?(file url: URL) {
-		guard let xmlParser = XMLParser(contentsOf: url) else { return nil }
+	init(file url: URL) throws {
+		guard let xmlParser = XMLParser(contentsOf: url) else { throw Error.unableToOpenURL(url) }
 		self.xmlParser = xmlParser
 		super.init()
 	}
@@ -90,7 +97,7 @@ extension OPMLParser: XMLParserDelegate {
 			return
 		}
 		let entry = OPMLEntryBuilder(text: text, attributes: attributes.map { Attribute(name: $0.key, value: $0.value) })
-		if var parentEntry = currentOPMLEntry {
+		if let parentEntry = currentOPMLEntry {
 			if parentEntry.children == nil {
 				parentEntry.children = [entry]
 			} else {
@@ -99,6 +106,20 @@ extension OPMLParser: XMLParserDelegate {
 		} else {
 			currentOPMLEntry = entry
 		}
+	}
+
+	public enum Error: LocalizedError {
+		public var errorDescription: String? {
+			switch self {
+			case .invalidDocument: return "Invalid or missing XML document"
+			case .parseError(let error): return "XML parsing error: \(error.localizedDescription)"
+			case .unableToOpenURL(let url): return "Unable to open a file at the given URL \(url)"
+			}
+		}
+
+		case invalidDocument
+		case parseError(Swift.Error)
+		case unableToOpenURL(URL)
 	}
 
 }
