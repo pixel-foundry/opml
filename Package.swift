@@ -6,8 +6,11 @@ let package = Package(
 	products: [
 		.library(name: "OPML", targets: ["OPML"])
 	],
+	dependencies: [
+		.package(name: "Html", url: "https://github.com/pointfreeco/swift-html.git", from: "0.3.0")
+	],
 	targets: [
-		.target(name: "OPML"),
+		.target(name: "OPML", dependencies: ["Html"]),
 		.testTarget(
 			name: "Tests",
 			dependencies: ["OPML"],
