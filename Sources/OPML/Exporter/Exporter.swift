@@ -9,7 +9,7 @@ public extension OPML {
 
 	func xml(indented: Bool) -> String {
 		if indented {
-			debugRender(document, config: Config.pretty)
+			return debugRender(document, config: Config.pretty)
 		}
 		return xml
 	}
