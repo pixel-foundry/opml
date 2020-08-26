@@ -34,9 +34,10 @@ import OPML
 let rssFeeds = [...] // your RSS feed models
 
 let opml = OPML(title: "RSS Feeds", entries: rssFeeds.map { feed -> OPMLEntry in
-	OPMLEntry(rss: feed.url, title: feed.title)
+    OPMLEntry(rss: feed.url, title: feed.title)
 })
-let xml = opml.xml // <?xml version="1.0" encoding="UTF-8"?><opml version="2.0"><head><title>RSS Feeds
+let xml = opml.xml
+// <?xml version="1.0" encoding="UTF-8"?><opml version="2.0"><head><title>RSS Feeds...
 ```
 
 ## Installation
@@ -45,9 +46,9 @@ SwiftPM:
 
 ```swift
 dependencies: [
-		.package(name: "OPML", url: "https://github.com/pixel-foundry/opml", from: "0.0.1")
+    .package(name: "OPML", url: "https://github.com/pixel-foundry/opml", from: "0.0.1")
 ],
 targets: [
-		.target(name: "YourTarget", dependencies: ["OPML"])
+    .target(name: "YourTarget", dependencies: ["OPML"])
 ]
 ```
