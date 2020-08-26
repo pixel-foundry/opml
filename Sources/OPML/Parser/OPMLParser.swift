@@ -71,7 +71,7 @@ extension OPMLParser: XMLParserDelegate {
 		switch elementName.lowercased() {
 		case "outline":
 			guard currentXMLDOMPath.lastPathComponent != "outline",
-				  let currentEntry = currentOPMLEntry else { return }
+				let currentEntry = currentOPMLEntry else { return }
 			opmlBuilder.addEntry(currentEntry)
 			currentOPMLEntry = nil
 		default:
@@ -108,8 +108,8 @@ extension OPMLParser: XMLParserDelegate {
 		}
 	}
 
-	public enum Error: LocalizedError {
-		public var errorDescription: String? {
+	enum Error: LocalizedError {
+		var errorDescription: String? {
 			switch self {
 			case .invalidDocument: return "Invalid or missing XML document"
 			case .parseError(let error): return "XML parsing error: \(error.localizedDescription)"

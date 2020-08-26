@@ -35,8 +35,8 @@ final class OPMLBuilder {
 		)
 	}
 
-	public enum Error: String, LocalizedError {
-		public var errorDescription: String? {
+	enum Error: String, LocalizedError {
+		var errorDescription: String? {
 			rawValue
 		}
 

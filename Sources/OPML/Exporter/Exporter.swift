@@ -1,29 +1,57 @@
+import Foundation
 import Html
 
 public extension OPML {
 
+	var xml: String {
+		render(document)
+	}
+
+	func xml(indented: Bool) -> String {
+		if indented {
+			debugRender(document, config: Config.pretty)
+		}
+		return xml
+	}
+
+	private static let dateFormatter = DateFormatter.iso8601
+
 	private var document: [Node] {
 		[
 			.xml,
-			.opml(version: version,
-				titleNode,
-				.body(
-					entries.map { $0.node }
-				)
+			.opml(
+				version: version,
+				headNode,
+				.body(entries.map { $0.node })
 			)
 		]
 
 	}
 
-	private var titleNode: Node {
+	private var headNode: Node {
+		var children = [Node]()
 		if let title = title {
-			return .head(.title(.text(title)))
+			children.append(.title(.text(title)))
 		}
-		return .fragment([])
-	}
-
-	public var xml: String {
-		render(document)
+		if let dateCreated = dateCreated {
+			children.append(.dateCreated(.text(OPML.dateFormatter.string(from: dateCreated))))
+		}
+		if let dateModified = dateModified {
+			children.append(.dateModified(.text(OPML.dateFormatter.string(from: dateModified))))
+		}
+		if let ownerName = ownerName {
+			children.append(.ownerName(.text(ownerName)))
+		}
+		if let ownerEmail = ownerEmail {
+			children.append(.ownerEmail(.text(ownerEmail)))
+		}
+		if let ownerID = ownerID {
+			children.append(.ownerID(.text(ownerID.absoluteString)))
+		}
+		if let docs = docs {
+			children.append(.docs(.text(docs.absoluteString)))
+		}
+		return .head(children)
 	}
 
 }
