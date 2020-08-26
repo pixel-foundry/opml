@@ -29,4 +29,19 @@ public struct OPMLEntry: Codable, Hashable {
 		self.children = children
 	}
 
+	public init(
+		rss feedURL: URL,
+		siteURL: URL?,
+		title: String
+	) {
+		text = title
+		attributes = [
+			Attribute(name: "title", value: title),
+			Attribute(name: "type", value: "rss"),
+			Attribute(name: "xmlUrl", value: feedURL.absoluteString),
+			Attribute(name: "htmlUrl", value: siteURL?.absoluteString ?? "")
+		]
+		children = nil
+	}
+
 }
