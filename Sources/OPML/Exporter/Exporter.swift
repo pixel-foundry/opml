@@ -59,10 +59,12 @@ public extension OPML {
 extension OPMLEntry {
 
 	var htmlAttributes: [(String, String)] {
-		attributes?.compactMap {
+		var htmlAttributes: [(String, String)] = attributes?.compactMap {
 			guard !$0.value.isEmpty else { return nil }
 			return ($0.name, escapeTextNode(text: $0.value))
 		} ?? []
+		htmlAttributes.append(("text", text))
+		return htmlAttributes
 	}
 
 	var node: Node {
