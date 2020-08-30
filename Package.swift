@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.2
 import PackageDescription
 
 let package = Package(
@@ -13,8 +13,7 @@ let package = Package(
 		.target(name: "OPML", dependencies: ["Html"]),
 		.testTarget(
 			name: "Tests",
-			dependencies: ["OPML"],
-			resources: [.copy("Resources/feedly.opml"), .copy("Resources/rsparser.opml")]
+			dependencies: ["OPML"]
 		)
 	]
 )
