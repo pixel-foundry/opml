@@ -32,15 +32,16 @@ public struct OPMLEntry: Codable, Hashable {
 	public init(
 		rss feedURL: URL,
 		siteURL: URL?,
-		title: String
+		title: String,
+		attributes: [Attribute]? = nil
 	) {
 		text = title
-		attributes = [
+		self.attributes = [
 			Attribute(name: "title", value: title),
 			Attribute(name: "type", value: "rss"),
 			Attribute(name: "xmlUrl", value: feedURL.absoluteString),
-			Attribute(name: "htmlUrl", value: siteURL?.absoluteString ?? "")
-		]
+			Attribute(name: "htmlUrl", value: siteURL?.absoluteString ?? ""),
+		] + (attributes ?? [])
 		children = nil
 	}
 
