@@ -13,7 +13,7 @@ public final class OPMLParser: NSObject {
 
 	fileprivate let opmlBuilder = OPMLBuilder()
 
-	func parse() throws -> OPML {
+    public func parse() throws -> OPML {
 		xmlParser.delegate = self
 		let success = xmlParser.parse()
 		if !success {
@@ -26,12 +26,12 @@ public final class OPMLParser: NSObject {
 		return try opmlBuilder.opml()
 	}
 
-	init(_ data: Data) {
+	public init(_ data: Data) {
 		xmlParser = XMLParser(data: data)
 		super.init()
 	}
 
-	init(file url: URL) throws {
+    public init(file url: URL) throws {
 		guard let xmlParser = XMLParser(contentsOf: url) else { throw Error.unableToOpenURL(url) }
 		self.xmlParser = xmlParser
 		super.init()
