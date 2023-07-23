@@ -109,7 +109,7 @@ extension OPMLParser: XMLParserDelegate {
 	}
 
 	public enum Error: LocalizedError {
-		var errorDescription: String? {
+		public var errorDescription: String? {
 			switch self {
 			case .invalidDocument: return "Invalid or missing XML document"
 			case .parseError(let error): return "XML parsing error: \(error.localizedDescription)"
