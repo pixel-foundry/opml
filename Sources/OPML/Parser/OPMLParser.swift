@@ -96,7 +96,7 @@ extension OPMLParser: XMLParserDelegate {
 		guard let text = attributes.first(where: { $0.key.lowercased() == "text" })?.value else {
 			return
 		}
-		let entry = OPMLEntryBuilder(text: text, attributes: attributes.map { Attribute(name: $0.key, value: $0.value) })
+		let entry = OPMLEntryBuilder(text: text, attributes: attributes.map { OPMLAttribute(name: $0.key, value: $0.value) })
 		if let parentEntry = currentOPMLEntry {
 			if parentEntry.children == nil {
 				parentEntry.children = [entry]
