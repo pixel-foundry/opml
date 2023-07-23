@@ -41,7 +41,7 @@ final public class OPMLParser: NSObject {
 
 extension OPMLParser: XMLParserDelegate {
 
-	func parser(
+	public func parser(
 		_ parser: XMLParser,
 		didStartElement elementName: String,
 		namespaceURI: String?,
@@ -61,7 +61,7 @@ extension OPMLParser: XMLParserDelegate {
 		}
 	}
 
-	func parser(
+	public func parser(
 		_ parser: XMLParser,
 		didEndElement elementName: String,
 		namespaceURI: String?,
@@ -79,7 +79,7 @@ extension OPMLParser: XMLParserDelegate {
 		}
 	}
 
-	func parser(_ parser: XMLParser, foundCharacters string: String) {
+	public func parser(_ parser: XMLParser, foundCharacters string: String) {
 		switch currentXMLDOMPath.lastPathComponent {
 		case "title":
 			opmlBuilder.title = string
