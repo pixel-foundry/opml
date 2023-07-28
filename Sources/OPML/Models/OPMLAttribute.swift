@@ -1,4 +1,4 @@
-public struct Attribute: Codable, Hashable {
+public struct OPMLAttribute: Codable, Hashable {
 
 	public let name: String
 	public let value: String

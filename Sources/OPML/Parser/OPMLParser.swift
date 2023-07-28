@@ -3,7 +3,7 @@ import Foundation
 import FoundationXML
 #endif
 
-final class OPMLParser: NSObject {
+final public class OPMLParser: NSObject {
 
 	private let xmlParser: XMLParser
 
@@ -13,7 +13,7 @@ final class OPMLParser: NSObject {
 
 	fileprivate let opmlBuilder = OPMLBuilder()
 
-	func parse() throws -> OPML {
+	public func parse() throws -> OPML {
 		xmlParser.delegate = self
 		let success = xmlParser.parse()
 		if !success {
@@ -26,12 +26,12 @@ final class OPMLParser: NSObject {
 		return try opmlBuilder.opml()
 	}
 
-	init(_ data: Data) {
+	public init(_ data: Data) {
 		xmlParser = XMLParser(data: data)
 		super.init()
 	}
 
-	init(file url: URL) throws {
+	public init(file url: URL) throws {
 		guard let xmlParser = XMLParser(contentsOf: url) else { throw Error.unableToOpenURL(url) }
 		self.xmlParser = xmlParser
 		super.init()
@@ -41,7 +41,7 @@ final class OPMLParser: NSObject {
 
 extension OPMLParser: XMLParserDelegate {
 
-	func parser(
+	public func parser(
 		_ parser: XMLParser,
 		didStartElement elementName: String,
 		namespaceURI: String?,
@@ -61,7 +61,7 @@ extension OPMLParser: XMLParserDelegate {
 		}
 	}
 
-	func parser(
+	public func parser(
 		_ parser: XMLParser,
 		didEndElement elementName: String,
 		namespaceURI: String?,
@@ -79,7 +79,7 @@ extension OPMLParser: XMLParserDelegate {
 		}
 	}
 
-	func parser(_ parser: XMLParser, foundCharacters string: String) {
+	public func parser(_ parser: XMLParser, foundCharacters string: String) {
 		switch currentXMLDOMPath.lastPathComponent {
 		case "title":
 			opmlBuilder.title = string
@@ -96,7 +96,7 @@ extension OPMLParser: XMLParserDelegate {
 		guard let text = attributes.first(where: { $0.key.lowercased() == "text" })?.value else {
 			return
 		}
-		let entry = OPMLEntryBuilder(text: text, attributes: attributes.map { Attribute(name: $0.key, value: $0.value) })
+		let entry = OPMLEntryBuilder(text: text, attributes: attributes.map { OPMLAttribute(name: $0.key, value: $0.value) })
 		if let parentEntry = currentOPMLEntry {
 			if parentEntry.children == nil {
 				parentEntry.children = [entry]
@@ -108,8 +108,8 @@ extension OPMLParser: XMLParserDelegate {
 		}
 	}
 
-	enum Error: LocalizedError {
-		var errorDescription: String? {
+	public enum Error: LocalizedError {
+		public var errorDescription: String? {
 			switch self {
 			case .invalidDocument: return "Invalid or missing XML document"
 			case .parseError(let error): return "XML parsing error: \(error.localizedDescription)"

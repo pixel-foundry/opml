@@ -4,7 +4,7 @@ public struct OPMLEntry: Codable, Hashable {
 
 	/// What is displayed when an outliner opens the OPML file.
 	public let text: String
-	public let attributes: [Attribute]?
+	public let attributes: [OPMLAttribute]?
 	public let children: [OPMLEntry]?
 
 	public var title: String? {
@@ -21,7 +21,7 @@ public struct OPMLEntry: Codable, Hashable {
 
 	public init(
 		text: String,
-		attributes: [Attribute]?,
+		attributes: [OPMLAttribute]?,
 		children: [OPMLEntry]? = nil
 	) {
 		self.text = text
@@ -33,14 +33,14 @@ public struct OPMLEntry: Codable, Hashable {
 		rss feedURL: URL,
 		siteURL: URL?,
 		title: String,
-		attributes: [Attribute]? = nil
+		attributes: [OPMLAttribute]? = nil
 	) {
 		text = title
 		self.attributes = [
-			Attribute(name: "title", value: title),
-			Attribute(name: "type", value: "rss"),
-			Attribute(name: "xmlUrl", value: feedURL.absoluteString),
-			Attribute(name: "htmlUrl", value: siteURL?.absoluteString ?? ""),
+			OPMLAttribute(name: "title", value: title),
+			OPMLAttribute(name: "type", value: "rss"),
+			OPMLAttribute(name: "xmlUrl", value: feedURL.absoluteString),
+			OPMLAttribute(name: "htmlUrl", value: siteURL?.absoluteString ?? ""),
 		] + (attributes ?? [])
 		children = nil
 	}
