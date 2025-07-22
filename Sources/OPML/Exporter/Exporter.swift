@@ -2,17 +2,17 @@ import Foundation
 import Html
 
 public extension OPML {
-
 	var xml: String {
 		render(document)
 	}
 
-	func xml(indented: Bool) -> String {
-		if indented {
-			return debugRender(document, config: Config.pretty)
-		}
-		return xml
-	}
+    // TODO: Reintroduce indentation when bugs are fixed. Currently doesn't escape attribute values.
+//	func xml(indented: Bool) -> String {
+//        if indented {
+//			return debugRender(document, config: Config.pretty)
+//		}
+//		return xml
+//	}
 
 	private static let dateFormatter = DateFormatter.iso8601
 
@@ -53,11 +53,9 @@ public extension OPML {
 		}
 		return .head(children)
 	}
-
 }
 
 extension OPMLEntry {
-
 	var htmlAttributes: [(String, String)] {
 		var htmlAttributes: [(String, String)] = attributes?.compactMap {
 			guard !$0.value.isEmpty else { return nil }
@@ -70,5 +68,10 @@ extension OPMLEntry {
 	var node: Node {
 		.outline(attributes: htmlAttributes, children?.map { $0.node } ?? [])
 	}
+}
 
+public extension OPMLEntry {
+	var xml: String {
+		render(node)
+	}
 }

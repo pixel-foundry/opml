@@ -44,5 +44,4 @@ public struct OPMLEntry: Codable, Hashable {
 		] + (attributes ?? [])
 		children = nil
 	}
-
 }
